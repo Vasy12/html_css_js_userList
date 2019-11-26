@@ -70,12 +70,12 @@
 
     users.forEach(
         (user) => {
-            userListElem.append(getUserListElem(user));
+            userListElem.append(createUserListElem(user));
         }
     );
 
 
-    function getUserImageElem({imageSrc}) {
+    function createUserImageElem({imageSrc}) {
 
         const userImageContainerElem = document.createElement('div');
         userImageContainerElem.classList.add("userImageContainer");
@@ -89,7 +89,7 @@
 
     }
 
-    function getUserFullNameElem({name, surname}) {
+    function createUserFullNameElem({name, surname}) {
 
         const userFullNameElem = document.createElement('div');
         userFullNameElem.innerText = `${name} ${surname}`;
@@ -97,21 +97,21 @@
         return userFullNameElem;
     }
 
-    function getUserCardElem(user) {
+    function createUserCardElem(user) {
 
         const userCardWrapperElem = document.createElement('div');
         userCardWrapperElem.classList.add("userCardWrapper");
-        userCardWrapperElem.append(getUserImageElem(user));
-        userCardWrapperElem.append(getUserFullNameElem(user));
+        userCardWrapperElem.append(createUserImageElem(user));
+        userCardWrapperElem.append(createUserFullNameElem(user));
 
         return userCardWrapperElem;
 
     }
 
-    function getUserListElem(user) {
+    function createUserListElem(user) {
 
         const userListItemElem = document.createElement("li");
-        userListItemElem.append(getUserCardElem(user));
+        userListItemElem.append(createUserCardElem(user));
         userListItemElem.setAttribute("id", user.id);
         return userListItemElem;
 
