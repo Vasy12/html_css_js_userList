@@ -51,40 +51,18 @@
     const users = [
 
         {
+            id: 1,
             name: "Вася",
             surname: "Васильев",
             imageSrc: null,
         },
         {
+            id: 2,
             name: "Стас",
             surname: "Михайлов",
             imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
         },
-        {
-            name: "Стас",
-            surname: "Михайлов",
-            imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
-        },
-        {
-            name: "Стас",
-            surname: "Михайлов",
-            imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
-        },
-        {
-            name: "Стас",
-            surname: "Михайлов",
-            imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
-        },
-        {
-            name: "Стас",
-            surname: "Михайлов",
-            imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
-        },
-        {
-            name: "Стас",
-            surname: "Михайлов",
-            imageSrc: "https://24smi.org/public/media/celebrity/2019/01/29/eblteapobq9j-stas-mikhailov.jpg",
-        },
+
     ];
 
 
@@ -119,16 +97,6 @@
         return userFullNameElem;
     }
 
-
-    function getUserListElem(user) {
-
-        const userListItemElem = document.createElement("li");
-        userListItemElem.append(getUserCardElem(user));
-
-        return userListItemElem;
-
-    }
-
     function getUserCardElem(user) {
 
         const userCardWrapperElem = document.createElement('div');
@@ -139,6 +107,17 @@
         return userCardWrapperElem;
 
     }
+
+    function getUserListElem(user) {
+
+        const userListItemElem = document.createElement("li");
+        userListItemElem.append(getUserCardElem(user));
+        userListItemElem.setAttribute("id", user.id);
+        return userListItemElem;
+
+    }
+
+
 
 </script>
 </body>
